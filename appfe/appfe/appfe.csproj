@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="gulp\extras\" />
-    <Folder Include="gulp\lib\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
