@@ -50,7 +50,7 @@ gulp.task('build:views', ['clean:views'], function () {
         .pipe(preprocess({ context: { PROJECT: project } }))
         // 过滤gulp流中的文件
         .pipe(gulpif(function (file) {
-            if (file.path.indexOf('.html') != -1) {
+            if (file.path.indexOf('.html') !== -1) {
                 return true;
             } else {
                 return false;

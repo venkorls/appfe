@@ -1,8 +1,15 @@
-﻿var spritesmith = require('gulp.spritesmith');
+﻿var gulp = require('gulp');
+var spritesmith = require('gulp.spritesmith');
 var buffer = require('vinyl-buffer');
 var merge = require('merge2');
+var newer = require('gulp-newer');
+var logger = require('gulp-logger');
+var path = require('path');
+var plumber = require('gulp-plumber');
 
-
+var project = require('../lib/project')();
+var config = require('../config.' + project).sprites;
+var handleErrors = require('../lib/handleErrors');
 // 构建视图文件
 gulp.task('sprites', function () {
     var spriteData = gulp.src(config.src)

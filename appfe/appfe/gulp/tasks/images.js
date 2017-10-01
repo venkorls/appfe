@@ -1,5 +1,14 @@
-﻿var imagemin = require('gulp-imagemin');
+﻿var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
+var plumber = require('gulp-plumber');
+var newer = require('gulp-newer');
+var logger = require('gulp-logger');
+var del = require('del');
 
+
+var project = require('../lib/project')();
+var config = require('../config.' + project).images;
+var handleErrors = require('../lib/handleErrors');
 // 图片构建
 gulp.task('images', function () {
     return gulp.src(config.src)

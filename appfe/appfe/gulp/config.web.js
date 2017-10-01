@@ -1,6 +1,7 @@
-﻿var feSrc = path.resolve('./src');
+﻿var path = require("path");
+var feSrc = path.resolve('./src');
 var projectDir = path.resolve('../');
-
+var getFiles = require('./lib/getFiles');
 module.exports = {
     feSrc: feSrc,
     projectDir: projectDir,

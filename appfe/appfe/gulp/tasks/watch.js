@@ -1,4 +1,5 @@
-﻿var watch = require('gulp-watch');
+﻿var gulp = require('gulp');
+var watch = require('gulp-watch');
 
 var project = require('../lib/project')();
 var config = require('../config.' + project);

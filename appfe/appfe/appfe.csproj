@@ -5,8 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="app\assets\stylesheets\" />
+    <Folder Include="app\assets\javascripts\" />
+    <Folder Include="app\views\" />
+    <Folder Include="assets\web\" />
+    <Folder Include="dist\css\" />
+    <Folder Include="dist\js\" />
+    <Folder Include="dist\images\" />
     <Folder Include="gulp\extras\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="public\images\" />
+    <Folder Include="src\components\users\" />
+    <Folder Include="src\components\web\common\" />
+    <Folder Include="src\components\cooperation\" />
+    <Folder Include="src\css\" />
+    <Folder Include="src\images\web\" />
+    <Folder Include="src\js\" />
+    <Folder Include="src\pages\users\" />
+    <Folder Include="src\pages\cooperation\" />
+    <Folder Include="src\sprites\web\" />
   </ItemGroup>
 
   <ItemGroup>
