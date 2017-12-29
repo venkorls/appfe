@@ -1,4 +1,4 @@
-var _ = require('lodash');
+锘縱ar _ = require('lodash');
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -15,7 +15,7 @@ var cssnano = require('cssnano');
 var project = require('./gulp/lib/project')();
 var config = require('./gulp/config.' + project).webpack;
 
-// loaders配置
+// loaders脜盲脰脙
 var getLoaders = function (env) {
     return [{
         test: /\.jsx?$/,
@@ -39,27 +39,27 @@ var getLoaders = function (env) {
     }];
 };
 
-// 别名配置
+// 卤冒脙没脜盲脰脙
 var getAlias = function (env) {
     return {
-        // 特殊
+        // 脤脴脢芒
         'jquery': path.resolve(__dirname, '../src/vendor/jquery2/jquery.js'),
 
-        // 正常第三方库
+        // 脮媒鲁拢碌脷脠媒路陆驴芒
         'jquery.js': path.resolve(__dirname, '../src/vendor/jquery2/jquery.js'),
     };
 };
 
-// 插件配置
+// 虏氓录镁脜盲脰脙
 var getPlugins = function (env) {
     var defaultPlugins = [
-        // 这个不仅是别名，还可以在遇到别名的时候自动引入模块
+        // 脮芒赂枚虏禄陆枚脢脟卤冒脙没拢卢禄鹿驴脡脪脭脭脷脫枚碌陆卤冒脙没碌脛脢卤潞貌脳脭露炉脪媒脠毛脛拢驴茅
         new webpack.ProvidePlugin({
             '$': 'jquery.js',
             'jquery': 'jquery.js',
             'jQuery': 'jquery.js',
         }),
-        // 抽离公共模块
+        // 鲁茅脌毛鹿芦鹿虏脛拢驴茅
         new webpack.optimize.CommonsChunkPlugin({ name: 'common', filename: 'common.js' }),
         new ExtractTextPlugin(
             path.join('../../stylesheets', project, '/[name].css'), {
@@ -69,7 +69,7 @@ var getPlugins = function (env) {
     ];
 
     if (env === 'production') {
-        // 线上模式的配置，去除依赖中重复的插件/压缩js/排除报错的插件
+        // 脧脽脡脧脛拢脢陆碌脛脜盲脰脙拢卢脠楼鲁媒脪脌脌碌脰脨脰脴赂麓碌脛虏氓录镁/脩鹿脣玫js/脜脜鲁媒卤篓麓铆碌脛虏氓录镁
         plugins = _.union(defaultPlugins, [
             new webpack.optimize.DedupePlugin(),
             new webpack.optimize.UglifyJsPlugin({
@@ -87,7 +87,7 @@ var getPlugins = function (env) {
     return plugins;
 };
 
-// postcss配置
+// postcss脜盲脰脙
 var getPostcss = function (env) {
     var postcss = [
         autoprefixer({ browers: ['last 2 versions', 'ie >= 9', '> 5% in CN'] }),
@@ -100,11 +100,11 @@ var getPostcss = function (env) {
     ];
 
     if (env === 'production') {
-        // 线上模式的配置，css压缩
+        // 脧脽脡脧脛拢脢陆碌脛脜盲脰脙拢卢css脩鹿脣玫
         return function () {
             return _.union([
                 cssnano({
-                    // 关闭cssnano的autoprefixer选项，不然会和前面的autoprefixer冲突
+                    // 鹿脴卤脮cssnano碌脛autoprefixer脩隆脧卯拢卢虏禄脠禄禄谩潞脥脟掳脙忙碌脛autoprefixer鲁氓脥禄
                     autoprefixer: false,
                     reduceIdents: false,
                     zindex: false,
@@ -121,7 +121,7 @@ var getPostcss = function (env) {
 };
 
 
-// 作为函数导出配置，代码更简洁
+// 脳梅脦陋潞炉脢媒碌录鲁枚脜盲脰脙拢卢麓煤脗毛赂眉录貌陆脿
 //module.exports = function (env) {
 //    return {
 //        context: config.context,

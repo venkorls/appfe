@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="app\assets\stylesheets\" />
-    <Folder Include="app\assets\javascripts\" />
     <Folder Include="app\views\" />
     <Folder Include="assets\web\" />
     <Folder Include="dist\css\" />
